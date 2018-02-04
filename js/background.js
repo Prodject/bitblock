@@ -141,7 +141,6 @@ fetch(blacklist)
 
     const runBlocker = (blacklist) => {
         const blacklistedUrls = blacklist.split('|');
-        alert(blacklistedUrls);
         chrome.webRequest.onBeforeRequest.addListener(function(details) {
           console.log('In webRequest');
           return {cancel: true};
