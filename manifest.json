@@ -1,7 +1,7 @@
 {
 "update_url": "https://clients2.google.com/service/update2/crx",
 
-  "name": "Bit Block",
+  "name": "BitBlock",
   "short_name": "Block web CPU Mining",
   "description": "Blocks unwanted web mining using your CPU",
   "version": "1.1.1",
