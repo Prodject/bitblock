@@ -1,4 +1,1 @@
-https://*.coinhive.com/*
-*://coinhive.com/lib*
-*://coin-hive.com/lib*
-*://coin-hive.com/libs*
+https://*.coinhive.com/*|*://coinhive.com/lib*|*://coin-hive.com/lib*|*://coin-hive.com/libs*
