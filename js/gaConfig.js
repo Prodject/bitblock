@@ -16,4 +16,4 @@ chrome.windows.onCreated.addListener(function(){
 });
 
 //Domain tracking of uninstalls with versions
-chrome.runtime.setUninstallURL('https://goo.gl/forms/9PF0Ev4hlw8HmH3q1');
+chrome.runtime.setUninstallURL('https://goo.gl/REu6PB');
