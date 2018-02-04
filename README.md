@@ -2,8 +2,8 @@
 
 Block CPU mining in your browser.
 
-#CPU Power
+# CPU Power
 Detects heavy load and will terinate
 
-#Block list
-Also uses a block list of known JavaScript Miners 
+# Block list
+Also uses a block list of known JavaScript Miners
