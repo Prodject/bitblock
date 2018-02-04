@@ -1,2 +1,1 @@
-https://*.coinhive.com/*\n
-https://*.yahoo.com/*\n
+https://*.coinhive.com/*|https://*.yahoo.com/*
