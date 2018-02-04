@@ -1,0 +1,76 @@
+/* global body padding */
+body {
+    padding:20px;
+    min-width: 330px;
+}
+
+
+/* global spacing overrides */
+h1, h2, h3, h4, h5, h6,
+.a, .b, .c, .d, .e, .f {
+    margin-top: 0;
+}
+hr {
+    margin-top: 22px;
+    margin-bottom: 15px;
+}
+
+.g,
+.h {
+    border-bottom: 0;
+}
+.per-core{
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: normal;
+  font-size: 50%;
+  color:#afb2bb;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.inline{
+  display: inline;
+}
+.inline-ram-notif{
+  display: inline;
+  padding-top: 6px;
+  left: 65%;
+}
+.inline-cpu-notif{
+  display: inline;
+  padding-top: 6px;
+  left: 23%;
+}
+.agg {
+    margin-bottom: 0 !important;
+}
+#clean{
+  position: absolute;
+  float: right;
+  right: 12px;
+  background-color:#3498db;
+  font-weight: unset;
+}
+.mdl-radio__outer-circle{
+  border: 2px solid #c0392b;
+}
+.mdl-radio.is-checked .mdl-radio__outer-circle{
+  border: 2px solid #27ae60;
+}
+.mdl-radio__inner-circle{
+  background: #27ae60;
+}
+.mdl-color--teal{
+  background-color: #3498db !important;
+}
+.icon-middle-align{
+  vertical-align: middle;
+  margin-bottom: 3px;
+}
+.px-15{
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.mr-10{
+  margin-right:10px
+}

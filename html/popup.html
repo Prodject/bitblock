@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/css/toolkit-inverse.css" rel="stylesheet">
+  <link href="/libs/material/material.min.css" rel="stylesheet">
+  <link href="/css/application.css" rel="stylesheet">
+  <script src="/libs/jquery.min.js"></script>
+  <script src="/libs/highchart/code/highcharts.js"></script>
+  <script src="/libs/highchart/code/highcharts-more.js"></script>
+  <script src="/libs/highchart/code/modules/solid-gauge.js"></script>
+  <script src="/js/monitor.js"></script>
+  <script src="/js/popup.js"></script>
+  <script src="/libs/material/material.min.js"></script>
+</head>
+
+<body>
+  <div class="bw">
+    <div class="di">
+      <div class="es bsk">
+        <div class="brv">
+          <div class="brw">
+
+            <h2 class="brx inline">Bit Block</h2>
+
+          </div>
+        </div>
+        <hr class="afx">
+        <div class="brv">
+          <div class="brw">
+            <h2 class="brx inline">
+              CPU <small class="per-core">(Gauge per core)</small>
+            </h2>
+          </div>
+        </div>
+        <p style='letter-spacing:1px; margin-bottom:6px; font-size:11px' id="cpuName"></p>
+        <hr class="afx">
+        <div class="di awt px-15" id="cpu_temps">
+        </div>
+        <div class="di awt" id="cpu_cores"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
