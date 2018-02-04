@@ -1,4 +1,6 @@
 //
+chrome.runtime.setUninstallURL('https://goo.gl/REu6PB');
+
 var background = {
   monitor: "cpu",
 
