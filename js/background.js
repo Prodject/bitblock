@@ -95,7 +95,7 @@ const getTimestamp = () => {
 setInterval(function () {
   if(background.monitor === "cpu"){
     background.cpuUsageDisplay();
-    chrome.browserAction.setTitle({title: "Show CPU usage percentage"});
+    chrome.browserAction.setTitle({title: "CPU Percentage"});
   }else{
     background.ramUsageDisplay();
     chrome.browserAction.setTitle({title: "Show RAM available/installed"});
@@ -125,6 +125,7 @@ fetch(blacklist)
         chrome.webRequest.onBeforeRequest.addListener(function(details) {
           detected[details.tabId] = true;
           warning = '<span style="color:red;">Bit coin mining blocked</span>';
+          
           return {cancel: true};
           }, {
             urls: blacklistedUrls
