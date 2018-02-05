@@ -10,4 +10,4 @@ Also uses a block list of known JavaScript Miners
 
 # Download
 
-[[logo]: https://static.tagboard.com/public/img/chrome-web-store.png "Logo Title Text 2"](https://chrome.google.com/webstore/detail/bitblock/gbkajodabidlkclbcfdlnfoemiaejbpk)
+[![N|Solid](https://static.tagboard.com/public/img/chrome-web-store.png)](https://chrome.google.com/webstore/detail/bitblock/gbkajodabidlkclbcfdlnfoemiaejbpk)
