@@ -71,6 +71,14 @@ var system = {
                 usedInPercentage = Math.floor((usage.kernel + usage.user) / usage.total * 100);
             }
             test.push(usedInPercentage);
+            if(usedInPercentage > 70)
+            {
+              //alert(totalUsafe);
+              $('#bitblocked').html('<span style="color:red;">Warning! High CPU @ '+usedInPercentage+'%</span>');
+            }
+            else {
+              $('#bitblocked').html('All appears to be safe @ '+usedInPercentage+'%');
+            }
         }
 
         system.monitor.setPrevCPUTime(info);

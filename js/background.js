@@ -37,6 +37,7 @@ var background = {
       }
       totalUsafe = parseInt(totalUsafe/cpu.length).toString();
       background.showUsagePer(totalUsafe+' %');
+      
     });
   },
   //
