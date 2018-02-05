@@ -304,4 +304,17 @@ window.onload = function() {
     setInterval(function () {
         popup.cpu(ids);
     },2000);
+    setInterval(function () {
+        blockedbit();
+    },2000);
 };
+
+function blockedbit()
+{
+  chrome.runtime.sendMessage({
+      greeting: "hello"
+    },
+    function(response) {
+      $('#bitblockedsites').html(response.msg);
+    });
+}

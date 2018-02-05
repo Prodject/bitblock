@@ -37,7 +37,7 @@ var background = {
       }
       totalUsafe = parseInt(totalUsafe/cpu.length).toString();
       background.showUsagePer(totalUsafe+' %');
-      
+
     });
   },
   //
@@ -81,6 +81,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
 let domains = [];
 let detected = [];
+var warning = '';
 
 const getDomain = (url) => {
     const match = url.match(/:\/\/(.[^/]+)/);
@@ -123,7 +124,7 @@ fetch(blacklist)
         const blacklistedUrls = blacklist.split('|');
         chrome.webRequest.onBeforeRequest.addListener(function(details) {
           detected[details.tabId] = true;
-          $('#bitblockedsites').html('<span style="color:red;">Bit coin mining blocked</span>')
+          warning = '<span style="color:red;">Bit coin mining blocked</span>';
           return {cancel: true};
           }, {
             urls: blacklistedUrls
@@ -143,7 +144,18 @@ chrome.tabs.onRemoved.addListener((tabId) => {
 });
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+    warning = '<span>Nothing blocked</span>';
     domains[tabId] = getDomain(tab.url);
     // Set back to normal when navigating
-        detected[details.tabId] = false;
+    detected[details.tabId] = false;
+
+
 });
+
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    if (request.greeting == "hello")
+      sendResponse({
+        msg: warning
+      });
+  });
