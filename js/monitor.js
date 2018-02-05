@@ -28,12 +28,11 @@ var system = {
         system.ramHits = 0;
       }
     },
-
     //
     cpuOverLoad: function(core, usage){
       system.notificationOpt.title = "Higher usage on core #"+core;
       system.notificationOpt.message = "Your core #"+core+" has reached "+usage+"% of its usage, Please check your system!";
-      if(usage > 60){
+      if(usage > 10){
         system.cpuHits++;
         if(system.cpuHits >= 30){
           chrome.notifications.create('core-'+core+'-overload', system.notificationOpt, function(){});

@@ -37,21 +37,8 @@ var background = {
       }
       totalUsafe = parseInt(totalUsafe/cpu.length).toString();
       background.showUsagePer(totalUsafe+' %');
-      if(totalUsafe > 61)
-      {
-        //alert(totalUsafe);
-      }
     });
   },
-
-  //
-  ramUsageDisplay: function(){
-    chrome.system.memory.getInfo(function (info) {
-      var ram = system.monitor.ram(info);
-      background.showUsagePer(ram.used.toString()+' %');
-    });
-  },
-
   //
   showUsagePer: function(text){
     chrome.browserAction.setBadgeText ( { text: text } );
@@ -71,16 +58,6 @@ var background = {
   },
 
   //
-  ram: function(){
-    if(background.shouldRamNotify) {
-      chrome.system.memory.getInfo(function (info) {
-        var ram = system.monitor.ram(info);
-        system.notification.ramOverLoad(ram.used);
-      });
-    }
-  },
-
-  //
   init: function(){
     background.cpu();
     background.ram();
@@ -96,9 +73,11 @@ var background = {
 
 background.getOS();
 background.setNotifier();
+
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   background.setNotifier();
 });
+
 let domains = [];
 let detected = [];
 
@@ -142,7 +121,8 @@ fetch(blacklist)
     const runBlocker = (blacklist) => {
         const blacklistedUrls = blacklist.split('|');
         chrome.webRequest.onBeforeRequest.addListener(function(details) {
-          console.log('In webRequest');
+          detected[details.tabId] = true;
+          $('#bitblockedsites').html('<span style="color:red;">Bit coin mining blocked</span>')
           return {cancel: true};
           }, {
             urls: blacklistedUrls
@@ -161,7 +141,6 @@ chrome.tabs.onRemoved.addListener((tabId) => {
     delete domains[tabId];
 });
 
-// Updating domain for synchronous checking in onBeforeRequest
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     domains[tabId] = getDomain(tab.url);
     // Set back to normal when navigating
